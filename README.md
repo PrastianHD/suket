@@ -27,3 +27,32 @@
 -->
 
 
+## VPS
+
+```
+sudo apt update && upgrade -y
+```
+
+```bash
+sudo apt install python3
+python3 --version
+sudo apt install python3-pip
+```
+
+```
+sudo apt install screen
+screen -S grass
+```
+
+```
+git clone https://github.com/PrastianHD/suket.git
+cd suket
+```
+```
+pip install -r requirements.txt
+```
+
+```
+python3 run.py
+```
+> CTRL + A D
