@@ -19,7 +19,7 @@
 #### Usage command
 - Open file ```proxy_list.txt``` and insert your proxies
 - Run ```python run.py``` and insert your userid
-- <img src="https://github.com/im-hanzou/getgrass_bot/blob/main/run.png" width=500>
+
 <!--
 - For multiple accounts and for each of them one proxy
 -  insert your accounts user ids to user_id.txt and insert your proxies to proxy_list(all).txt
