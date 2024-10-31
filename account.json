@@ -1,0 +1,10 @@
+[
+    {
+        "_user_id": "",
+        "proxy": "proxy/proxy1.txt"
+    },
+    {
+        "_user_id": "",
+        "proxy": "proxy/proxy2.txt"
+    }
+]
