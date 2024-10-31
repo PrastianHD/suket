@@ -37,10 +37,10 @@ async def connect_to_wss(socks5_proxy, user_id):
                             {"id": str(uuid.uuid4()), "version": "1.0.0", "action": "PING", "data": {}})
                         logger.debug(send_message)
                         await websocket.send(send_message)
-                        await asyncio.sleep(20)
+                        await asyncio.sleep(30)
 
                 # asyncio.create_task(send_http_request_every_10_seconds(socks5_proxy, device_id))
-                await asyncio.sleep(1)
+                await asyncio.sleep(10)
                 asyncio.create_task(send_ping())
 
                 while True:
@@ -57,7 +57,7 @@ async def connect_to_wss(socks5_proxy, user_id):
                                 "user_agent": custom_headers['User-Agent'],
                                 "timestamp": int(time.time()),
                                 "device_type": "extension",
-                                "version": "3.3.2"
+                                "version": "4.26.2"
                             }
                         }
                         logger.debug(auth_response)
@@ -73,9 +73,11 @@ async def connect_to_wss(socks5_proxy, user_id):
 
 
 async def main():
-    #find user_id on the site in conlose localStorage.getItem('userId') (if you can't get it, write allow pasting)
-    _user_id = input('Please Enter your user ID: ')
-    #put the proxy in a file in the format socks5://username:password@ip:port or socks5://ip:port
+    # Membaca user_id dari file account.txt
+    with open('account.txt', 'r') as account_file:
+        _user_id = account_file.readline().strip()
+    
+    # Membaca daftar proxy dari file proxy_list.txt
     with open('proxy_list.txt', 'r') as file:
         socks5_proxy_list = file.read().splitlines()
     
