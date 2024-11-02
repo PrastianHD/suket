@@ -13,11 +13,11 @@
 - `account.json`
 - `main.py`
 
-## KONFIGURASI
+### KONFIGURASI
 - Format Proxy = `socks5://ip:port` or `socks5://username:password@ip:port`
 - account = `_user_id`
 
-#### HOW TO GET _user_id
+### HOW TO GET _user_id
 - Login to https://app.getgrass.io
 - Press f12 go to console, then type ```allow pasting``` insert to console
 ![0001](https://github.com/im-hanzou/getgrass_bot/blob/main/pasting.JPG)
