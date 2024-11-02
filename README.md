@@ -1,4 +1,4 @@
-# Ngarit Suket
+# NGARIT SUKET
 
 ### REGISTER : https://s.id/sukettt ( Please use this link instead! xD )
 
