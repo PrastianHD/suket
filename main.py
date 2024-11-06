@@ -23,7 +23,13 @@ async def connect_to_wss(socks5_proxy, user_id):
             ssl_context.verify_mode = ssl.CERT_NONE
             uri = "wss://proxy.wynd.network:4650/"
             server_hostname = "proxy.wynd.network"
-            proxy = Proxy.from_url(socks5_proxy)
+            
+            # Create Proxy instance
+            if '@' in socks5_proxy:  # Check if proxy is in username:password@ip:port format
+                proxy = Proxy.from_url(f'socks5://{socks5_proxy}')
+            else:  # Assume it is in ip:port format
+                proxy = Proxy.from_url(f'socks5://{socks5_proxy}')
+            
             async with proxy_connect(uri, proxy=proxy, ssl=ssl_context, server_hostname=server_hostname,
                                      extra_headers=custom_headers) as websocket:
                 async def send_ping():
@@ -87,3 +93,4 @@ async def main():
 
 if __name__ == '__main__':
     asyncio.run(main())
+
